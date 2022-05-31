@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="content">
+        <div class="content_title">
+            <div class="title_left">
+                <span class="bigText">TODO</span> <span class="title_time">13:59 WWWW</span>
+            </div>
+            <div class="title_right">
+                <div><img src="img/time.png"/></div>
+                <div><img src="img/fq.png"/></div>
+                <div><img src="img/book.png"/></div>
+                <div><img src="img/music.png"/></div>
+            </div>
+        </div>
+        <div class="content_con">
+            <div class="content_menu">
+                <div class="task_text">Tasks</div>
+                <div class="addTask" onclick="clickAddImg()"><img src="img/add.png"/></div>
+                <div class="jsTime"><img src="img/time.png"/><span>11 : 00 : 11</span>
+                    <div class="sm_close"><img src="img/smClose.png"/></div>
+                </div>
+                <div class="fqTime">
+                    <img src="img/fq.png"/><span>11 : 00 : 11</span>
+                    <div class="sm_close"><img src="img/smClose.png"/></div>
+                </div>
+                <div class="yyMusic">
+                    <img src="img/music.png"/><span>UUUUUU</span>
+                    <div class="sm_close"><img src="img/smClose.png"/></div>
+                </div>
+            </div>
+            <div class="content_bottom">
+                <div>
+                    <div class="taskName">Ready</div>
+                    <div class="task1">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="taskName">In Progress</div>
+                    <div class="task2">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="taskName">Done</div>
+                    <div class="task3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    添加编辑 任务弹框 start-->
+    <div class="addTaskPop">
+        <div class="title">Task Set</div>
+        <div class="closeTask" onclick="closeTask()"><img src="img/close.png"/></div>
+        <div class="task_form">
+            <div>
+                <label>Subject</label>
+                <input type="text" class="subIpt" placeholder="Please enter a topic">
+                <label>Name</label>
+                <input type="text" class="nameIpt" placeholder="Please enter task name">
+                <label>Description</label>
+                <textarea class="desIpt" placeholder="Please enter task description"></textarea>
+            </div>
+            <div>
+                <label>Due Date</label>
+                <input type="datetime-local" class="dateIpt" placeholder="Please select task end date">
+                <label>Time To Finish</label>
+                <input type="number" class="timeIpt" placeholder="Please enter the learning time">
+                <label>Status</label>
+                <select class="statusIpt">
+                    <option value="0">Ready</option>
+                    <option value="1">In Progress</option>
+                    <option value="2">Done</option>
+                </select>
+                <label>Priority Rating</label>
+                <select class="priorityIpt">
+                    <option value="0">Low</option>
+                    <option value="1">Med</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+        </div>
+        <div class="task_btn">
+            <div class="task_del" onclick="clickDelTask()">DELETE</div>
+            <div class="task_save" onclick="addTask()">SAVE</div>
+        </div>
+    </div>
+<!--    添加编辑 任务弹框 end-->
+
+    <script src="js/addTask.js"></script>
+    <script src="js/cache.js"></script>
+</body>
+</html>
