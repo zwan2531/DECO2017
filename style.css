@@ -6,6 +6,10 @@
 html{
     font-size: 14px;
 }
+img{
+    width: 100%;
+    display: block;
+}
 .content{
     width: 100%;
     height: 100vh;
@@ -17,8 +21,8 @@ html{
     justify-content: space-between;
 }
 .bigText{
-    font-size: 3rem;
-    color: #4B7EDF !important;
+    font-size: 2rem;
+    color: #4B7EDF;
 }
 .title_right{
     display: flex;
@@ -30,13 +34,12 @@ html{
 }
 .title_right>div{
     width: 50px;
-    height: 50px;
-    background-color: black;
     margin: 0 10px;
+    cursor: pointer;
 }
 .content_con{
     width: 100%;
-    height: calc(100% - 5rem);
+    height: calc(100% - 6rem);
     /*background-color: lightslategray;*/
     margin-top: 1rem;
     overflow-y: auto;
@@ -44,33 +47,35 @@ html{
 .content_menu{
     width: 100%;
     display: flex;
+    align-items: flex-end;
 }
 .content_menu>div{
     padding: 5px 15px;
     box-sizing: border-box;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
 }
-.task_text{
-    background-color: #E5E5E5;
-}
 .content_bottom{
     width: 100%;
-    height: calc(100% - 40px);
+    /*height: calc(100% - 40px);*/
     background-color: #E5E5E5;
     overflow-y: auto;
 }
 .content_bottom>div{
     width: 100%;
-    min-height: 33%;
-    border-bottom: 1px solid black;
+    min-height: 20rem;
+    border-bottom: 1px black dashed;
     position: relative;
     padding: 3rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
+}
+.task1,.task2,.task3{
+    width: 100%;
+    column-count: 3;
+    column-gap: 10px;
+    margin-top: 2rem;
 }
 .taskName{
     position: absolute;
@@ -81,23 +86,225 @@ html{
     background-color: white;
 }
 .task_con{
-    width: 33%;
+    width: 100%;
+    break-inside: avoid;
     padding: 2rem;
     background-color: white;
-    border-radius: 5px;
-    height: 250px;
-    margin-top: 10px;
+    border-radius: 20px;
+    /*margin-bottom: 10px;*/
+    box-shadow: -5px 5px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
+.addTask{
+    width: 4rem;
+}
+.task_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.task_title_name{
+    box-shadow: -1px 5px 5px rgba(0,0,0,0.5);
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.task_ele{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    /*background-color: #4B7EDF;*/
+    margin-left: 5px;
+}
+.task_xl_title{
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 600;
+    word-break:break-all;
+}
+.task_des{
+    width: 100%;
+    color: #635D5D;
+    margin-bottom: 2rem;
+}
+.task_bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+/*添加任务弹框 start*/
+.addTaskPop{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 50vw;
+    padding: 1rem 2rem;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    border-radius: 2rem;
+    display: none;
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.closeTask{
+    width: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.task_form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.task_form>div{
+    width: 48%;
+}
+.task_form>div>label{
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+    color: #635D5D;
+    display: inline-block;
+}
+.task_form>div>input{
+    width: 100%;
+    height: 35px;
+    margin-top: 0.5rem;
+    border: 1px solid black;
+    padding-left: 1rem;
+}
+.task_form>div>textarea{
+    width: 100%;
+    height: 10rem;
+    margin-top: 0.5rem;
+    padding: 5px 0 0 5px;
+    border: 1px solid black;
+}
+.task_form>div>select{
+    width: 100%;
+    height: 35px;
+    margin-top: 0.5rem;
+    border: 1px solid black;
+    padding-left: 1rem;
+}
+.task_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.task_btn>div{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+    width: 10rem;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.task_del{
+    background-color: #635D5D;
+}
+.task_save{
+    background-color: #4B7EDF;
+}
+.jsTime,.fqTime,.task_text,.yyMusic{
+    background-color: #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    position: relative;
+}
+.jsTime>img{
+    width: 2rem !important;
+    margin-right: 5px;
+}
+.fqTime>img{
+    width: 2rem !important;
+    margin-right: 5px;
+}
+.yyMusic>img{
+    width: 2rem !important;
+    margin-right: 5px;
+}
+.sm_close{
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+.sm_close>img{
+    width: 20px !important;
+}
+/*添加任务弹框 end*/
 @media screen and (max-width: 960px){
     html{
         font-size: 10px;
     }
-    .task_con{
-        width: 48%;
+    .content_con{
+        width: 100%;
+        height: calc(100% - 8rem);
+    }
+    .content_bottom>div{
+        /*min-height: 40rem;*/
+    }
+    .addTaskPop{
+        width: 70vw;
+    }
+    .task1,.task2,.task3{
+        column-count: 2;
+        column-gap: 10px;
     }
 }
 @media screen and (max-width: 650px){
     html{
         font-size: 8px;
+    }
+    .content_title{
+        display: block;
+    }
+    .title_left{
+        text-align: center;
+    }
+    .bigText{
+        font-size: 3rem;
+    }
+    .title_time{
+        font-size: 2.5rem;
+    }
+    .content_bottom>div{
+        min-height: 40rem;
+    }
+    .content_con{
+        width: 100%;
+        height: calc(100% - 11rem);
+    }
+    .addTaskPop{
+        width: 90vw;
+    }
+    .task_form>div{
+        width: 100%;
+        margin: 1rem;
+    }
+    .task_form>div>textarea{
+        height: 20rem;
+    }
+    .task1,.task2,.task3{
+        column-count: 1;
+        column-gap: 10px;
     }
 }
