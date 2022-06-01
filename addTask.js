@@ -109,7 +109,6 @@ function addTask() {
         priority: priorityIpt.value,           // 重要等级
         oneDateTime: parseInt(Number(timeIpt.value)/countDays(dateIpt.value)),        // 每天需要学习的时间
     }
-    console.log(editIndex);
     if(editIndex === ''){
         taskArr.push(obj)
     }else {
@@ -132,7 +131,7 @@ function cleanIpt() {
 
 // 天数计算
 function countDays(time) {
-    let oDate1 = new Date()    //转换为12-18-2002格式
+    let oDate1 = new Date()
     let oDate2 = new Date(time)
     let iDays = parseInt((oDate2 - oDate1) / 1000 / 60 / 60 / 24)    //把相差的毫秒数转换为天数
     if(iDays < 0){
@@ -161,11 +160,13 @@ function clickEdit(index) {
 }
 // 点击删除
 function clickDelTask() {
-    if(editIndex == ''){
+    if(editIndex === ''){
         alert('Add operation cannot be deleted')
     }else {
         if(confirm('OK to delete?')){
             taskArr.splice(editIndex,1)
+            createTask()
+            closeTask()
         }
     }
 }

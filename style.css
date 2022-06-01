@@ -92,7 +92,7 @@ img{
     background-color: white;
     border-radius: 20px;
     /*margin-bottom: 10px;*/
-    box-shadow: -5px 5px 10px rgba(0,0,0,0.5);
+    /*box-shadow: -5px 5px 10px rgba(0,0,0,0.5);*/
     cursor: pointer;
 }
 .addTask{
@@ -224,7 +224,7 @@ img{
 }
 .jsTime,.fqTime,.task_text,.yyMusic{
     background-color: #E5E5E5;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin: 0 5px;
@@ -251,6 +251,133 @@ img{
     width: 20px !important;
 }
 /*添加任务弹框 end*/
+
+
+
+/*计时弹框 start*/
+.timingPop{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 50vw;
+    padding: 1rem 2rem;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    border-radius: 2rem;
+    display: none;
+}
+.timingPopTitle{
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+.timingText{
+    width: 100%;
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 6rem;
+}
+.timingBtn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.timingBtn>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    width: 12rem;
+    height: 12rem;
+    background-color: #E5E5E5;
+    margin: 0 2rem;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+/*计时弹框 end*/
+
+/*番茄弹框 start*/
+.tomatoPop{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 50vw;
+    padding: 1rem 2rem;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    border-radius: 2rem;
+    display: none;
+}
+.tomatoPopTitle{
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+.tomatoCon{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+.tomatoCon>div{
+    width: 50%;
+    padding: 0 2rem;
+}
+.workText,.breakText{
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.workText{
+    color: #F30707;
+}
+.breakText{
+    color: #00D909;
+}
+.workTime,.breakTime{
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.tomatoAE{
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.tomatoAE>div{
+    display: flex;
+    font-size: 2rem;
+    box-sizing: border-box;
+    background-color: #E5E5E5;
+    margin: 0 20px;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+}
+.tomatoStart{
+    width: 15rem;
+    margin: 4rem auto;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #4B7EDF;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.fqTime_text{
+    margin-left: 10px;
+}
+/*番茄弹框 end*/
 @media screen and (max-width: 960px){
     html{
         font-size: 10px;
@@ -262,12 +389,15 @@ img{
     .content_bottom>div{
         /*min-height: 40rem;*/
     }
-    .addTaskPop{
+    .addTaskPop,.timingPop,.tomatoPop{
         width: 70vw;
     }
     .task1,.task2,.task3{
         column-count: 2;
         column-gap: 10px;
+    }
+    .addTask{
+        width: 5rem;
     }
 }
 @media screen and (max-width: 650px){
@@ -293,7 +423,7 @@ img{
         width: 100%;
         height: calc(100% - 11rem);
     }
-    .addTaskPop{
+    .addTaskPop,.timingPop,.tomatoPop{
         width: 90vw;
     }
     .task_form>div{
@@ -306,5 +436,8 @@ img{
     .task1,.task2,.task3{
         column-count: 1;
         column-gap: 10px;
+    }
+    .addTask{
+        width: 6rem;
     }
 }

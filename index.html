@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
     <div class="content">
@@ -15,8 +14,8 @@
                 <span class="bigText">TODO</span> <span class="title_time">13:59 WWWW</span>
             </div>
             <div class="title_right">
-                <div><img src="img/time.png"/></div>
-                <div><img src="img/fq.png"/></div>
+                <div onclick="clickTime()"><img src="img/time.png"/></div>
+                <div onclick="openTomato()"><img src="img/fq.png"/></div>
                 <div><img src="img/book.png"/></div>
                 <div><img src="img/music.png"/></div>
             </div>
@@ -25,12 +24,12 @@
             <div class="content_menu">
                 <div class="task_text">Tasks</div>
                 <div class="addTask" onclick="clickAddImg()"><img src="img/add.png"/></div>
-                <div class="jsTime"><img src="img/time.png"/><span>11 : 00 : 11</span>
-                    <div class="sm_close"><img src="img/smClose.png"/></div>
+                <div class="jsTime" onclick="clickTime()"><img src="img/time.png"/><span class="jsTime_text">00 : 00 : 00</span>
+                    <div class="sm_close" onclick="clickClose(event)"><img src="img/smClose.png"/></div>
                 </div>
-                <div class="fqTime">
-                    <img src="img/fq.png"/><span>11 : 00 : 11</span>
-                    <div class="sm_close"><img src="img/smClose.png"/></div>
+                <div class="fqTime" onclick="tomatoTime()">
+                    <img src="img/fq.png"/><span class="fqTime_num">S1</span><span class="fqTime_text">00 : 00</span>
+                    <div class="sm_close" onclick="tomatoCloseSm(event)"><img src="img/smClose.png"/></div>
                 </div>
                 <div class="yyMusic">
                     <img src="img/music.png"/><span>UUUUUU</span>
@@ -77,7 +76,7 @@
                 <label>Due Date</label>
                 <input type="datetime-local" class="dateIpt" placeholder="Please select task end date">
                 <label>Time To Finish</label>
-                <input type="number" class="timeIpt" placeholder="Please enter the learning time">
+                <input type="number" class="timeIpt" min="0" placeholder="Please enter the learning time">
                 <label>Status</label>
                 <select class="statusIpt">
                     <option value="0">Ready</option>
@@ -99,7 +98,53 @@
     </div>
 <!--    添加编辑 任务弹框 end-->
 
-    <script src="js/addTask.js"></script>
+<!--    倒计时 弹框 start-->
+    <div class="timingPop">
+        <div class="timingPopTitle">Stopwatch Timer</div>
+        <div class="closeTask" onclick="closeTiming()"><img src="img/close.png"/></div>
+        <div class="timingText">
+            <span class="timingText1">00</span> : <span class="timingText2">00</span> : <span class="timingText3">00</span>
+        </div>
+        <div class="timingBtn">
+            <div class="timingBtnLeft" onclick="startTiming()">Start/Stop</div>
+            <div class="timingBtnRight" onclick="resetTiming()">Reset</div>
+        </div>
+    </div>
+<!--    倒计时 弹框 end-->
+
+<!--    番茄弹框 start-->
+    <div class="tomatoPop">
+        <div class="tomatoPopTitle">Pomodoro Timer</div>
+        <div class="closeTask" onclick="closeTomato()"><img src="img/close.png"/></div>
+        <div class="tomatoCon">
+            <div>
+                <div class="workText">WORK</div>
+                <div style="display: flex;align-items: flex-end">
+                    <div class="workTime">25 : 00</div><span style="margin-left: 10px;font-size: 1.5rem;color: #A8A8A8;">min</span>
+                </div>
+            </div>
+            <div>
+                <div class="breakText">BREAK</div>
+                <div style="display: flex;align-items: flex-end">
+                    <div class="breakTime">05 : 00</div>
+                    <span style="margin-left: 10px;font-size: 1.5rem;color: #A8A8A8;">min</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="tomatoAE">
+            <div onclick="tomatoA()">+</div>
+            <div onclick="tomatoE()">-</div>
+        </div>
+        <div class="tomatoStart" onclick="startTomatoTime()">START</div>
+    </div>
+<!--    番茄弹框 end-->
+
+
+
     <script src="js/cache.js"></script>
+    <script src="js/addTask.js"></script>
+    <script src="js/timingTime.js"></script>
+    <script src="js/tomato.js"></script>
 </body>
 </html>
