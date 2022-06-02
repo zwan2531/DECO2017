@@ -13,14 +13,12 @@ Before editing the code for the final design, I sent the design drawings of the 
 2. Keep 'READY', 'IN PROGRESS', 'DONE' in mobile devices
 ‘The parts of the three display planning stages on Mobile Devices are missing and should be consistent with those on desktop. ’
 
-![imagename](./readme/img3.png)
-![imagename](./readme/img5.jpg)
+<img src="./readme/img3.png" width="50%"><img src="./readme/img5.jpg" width="50%">
 
 3. Change four buttons on mobile devices
 'Usually at the bottom of the mobile devices is the paging button, where the four functional buttons shouldn't be. '
 
-![imagename](./readme/img1.png)
-![imagename](./readme/img5.jpg)
+<img src="./readme/img1.png" width="50%"><img src="./readme/img5.jpg" width="50%">
 
 ## Self-reflection & Challenges
 
