@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="content_title">
+            <div class="title_left">
+                <span class="bigText">TODO</span> <span class="title_time"></span>
+            </div>
+            <div class="title_right">
+                <div onclick="clickTime()"><img src="img/time.png"/></div>
+                <div onclick="openTomato()"><img src="img/fq.png"/></div>
+                <div onclick="openTranslate()"><img src="img/book.png"/></div>
+                <div onclick="openMusicPop()"><img src="img/music.png"/></div>
+            </div>
+        </div>
+        <div class="content_con">
+            <div class="content_menu">
+                <div class="task_text">Tasks</div>
+                <div class="addTask" onclick="clickAddImg()"><img src="img/add.png"/></div>
+                <div class="jsTime" onclick="clickTime()"><img src="img/time.png"/><span class="jsTime_text">00 : 00 : 00</span>
+                    <div class="sm_close" onclick="clickClose(event)"><img src="img/smClose.png"/></div>
+                </div>
+                <div class="fqTime" onclick="tomatoTime()">
+                    <img src="img/fq.png"/><span class="fqTime_num">S1</span><span class="fqTime_text">00 : 00</span>
+                    <div class="sm_close" onclick="tomatoCloseSm(event)"><img src="img/smClose.png"/></div>
+                </div>
+                <div class="yyMusic" onclick="openMusicPop()">
+                    <img src="img/music.png"/><span class="musicSmName">UUUUUU</span>
+                    <div class="sm_close" onclick="closeSmMusic(event)"><img src="img/smClose.png"/></div>
+                </div>
+            </div>
+            <div class="content_bottom">
+                <div>
+                    <div class="taskName">Ready</div>
+                    <div class="task1">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="taskName">In Progress</div>
+                    <div class="task2">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="taskName">Done</div>
+                    <div class="task3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    添加编辑 任务弹框 start-->
+    <div class="addTaskPop">
+        <div class="title">Task Set</div>
+        <div class="closeTask" onclick="closeTask()"><img src="img/close.png"/></div>
+        <div class="task_form">
+            <div>
+                <label>Subject</label>
+                <input type="text" class="subIpt" placeholder="Please enter a topic">
+                <label>Name</label>
+                <input type="text" class="nameIpt" placeholder="Please enter task name">
+                <label>Description</label>
+                <textarea class="desIpt" placeholder="Please enter task description"></textarea>
+            </div>
+            <div>
+                <label>Due Date</label>
+                <input type="datetime-local" class="dateIpt" placeholder="Please select task end date">
+                <label>Time To Finish</label>
+                <input type="number" class="timeIpt" min="0" placeholder="Please enter the learning time">
+                <label>Status</label>
+                <select class="statusIpt">
+                    <option value="0">Ready</option>
+                    <option value="1">In Progress</option>
+                    <option value="2">Done</option>
+                </select>
+                <label>Priority Rating</label>
+                <select class="priorityIpt">
+                    <option value="0">Low</option>
+                    <option value="1">Med</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+        </div>
+        <div class="task_btn">
+            <div class="task_del" onclick="clickDelTask()">DELETE</div>
+            <div class="task_save" onclick="addTask()">SAVE</div>
+        </div>
+    </div>
+<!--    添加编辑 任务弹框 end-->
+
+<!--    倒计时 弹框 start-->
+    <div class="timingPop">
+        <div class="timingPopTitle">Stopwatch Timer</div>
+        <div class="closeTask" onclick="closeTiming()"><img src="img/close.png"/></div>
+        <div class="timingText">
+            <span class="timingText1">00</span> : <span class="timingText2">00</span> : <span class="timingText3">00</span>
+        </div>
+        <div class="timingBtn">
+            <div class="timingBtnLeft" onclick="startTiming()">Start/Stop</div>
+            <div class="timingBtnRight" onclick="resetTiming()">Reset</div>
+        </div>
+    </div>
+<!--    倒计时 弹框 end-->
+
+<!--    番茄弹框 start-->
+    <div class="tomatoPop">
+        <div class="tomatoPopTitle">Pomodoro Timer</div>
+        <div class="closeTask" onclick="closeTomato()"><img src="img/close.png"/></div>
+        <div class="tomatoCon">
+            <div>
+                <div class="workText">WORK</div>
+                <div style="display: flex;align-items: flex-end">
+                    <div class="workTime">25 : 00</div><span style="margin-left: 10px;font-size: 1.5rem;color: #A8A8A8;">min</span>
+                </div>
+            </div>
+            <div>
+                <div class="breakText">BREAK</div>
+                <div style="display: flex;align-items: flex-end">
+                    <div class="breakTime">05 : 00</div>
+                    <span style="margin-left: 10px;font-size: 1.5rem;color: #A8A8A8;">min</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="tomatoAE">
+            <div onclick="tomatoA()">+</div>
+            <div onclick="tomatoE()">-</div>
+        </div>
+        <div class="tomatoStart" onclick="startTomatoTime()">START</div>
+    </div>
+<!--    番茄弹框 end-->
+
+<!--    翻译弹框 start-->
+    <div class="translatePop">
+        <div class="translatePopTitle">Dictionary</div>
+        <div class="closeTask" onclick="closeTranslate()"><img src="img/close.png"/></div>
+        <div class="tran_ipt">
+            <input type="search" placeholder="Enter text" class="tran_search_ipt">
+            <div class="tran_search" onclick="searchIpt()">Search</div>
+        </div>
+        <div class="tran_text">
+            <div class="tranTitle">Word: ${resr[i].word}</div>
+            <div class="tranPhonetic">Phonetic: ${resr[i].phonetic}</div>
+            <div class="tranOrigin">License: <br>
+                <div class="licenseName">${resr[i].license.name}</div>
+            </div>
+            <div class="meaningsCon"></div>
+            <div class="meanings">Meanings: </div>
+            <div class="definitions"></div>
+            <div class="tranOrigin">Pronunciation</div>
+            <div class="pronA"></div>
+        </div>
+    </div>
+<!--    翻译弹框 end-->
+
+<!--    音乐弹框 start-->
+    <div class="musicPop">
+        <div class="musicPopTitle">Dictionary</div>
+        <div class="closeTask" onclick="closeMusicPop()"><img src="img/close.png"/></div>
+        <div class="musicPopCon">
+            <div>
+                <div class="musicImg"><img src="img/flower dance.png" class="musicImgSrc"/></div>
+                <audio src="music/m1.mp3" class="musicS" controls></audio>
+
+            </div>
+            <div class="musicList">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+<!--    音乐弹框 end-->
+
+    <script src="js/cache.js"></script>
+    <script src="js/addTask.js"></script>
+    <script src="js/timingTime.js"></script>
+    <script src="js/tomato.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="js/music.js"></script>
+
+</body>
+</html>
