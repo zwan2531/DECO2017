@@ -27,5 +27,7 @@ In the process of this design, the biggest challenge I faced was how to let user
 ## References
 
 > iconfont-阿里巴巴矢量图标库. (2022). Retrieved 2 June 2022, from https://www.iconfont.cn/
+> 
 > QQ音乐-千万正版音乐海量无损曲库新歌热歌天天畅听的高品质音乐平台！. (2022). Retrieved 2 June 2022, from https://y.qq.com/?ADTAG=myqq#type=index
+> 
 > Free Dictionary API. (2022). Retrieved 2 June 2022, from https://dictionaryapi.dev/
