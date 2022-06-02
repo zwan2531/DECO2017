@@ -23,10 +23,10 @@ function createTask() {
             taskColor = '#0DBF49'
         }
         if(taskArr[i].priority == '1'){
-            taskColor = '#F30000'
+            taskColor = '#FFC700'
         }
         if(taskArr[i].priority == '2'){
-            taskColor = '#FFC700'
+            taskColor = '#F30000'
         }
         if(taskArr[i].state == '0'){
 
