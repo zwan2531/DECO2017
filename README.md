@@ -1,4 +1,4 @@
-# DECO2017
+# Explanation of design
 ## TODO
 TODO is a software designed by me to help students improve their learning efficiency by making study plans. It contains a scheduler, stopwatch, tomato clock, dictionary and music playback functions. At the beginning of the design, I chose white and gray as the main colors, while I chose blue for the TODO logo and some special buttons to keep it in harmony with other elements while keeping it fresh for the user. The whole design principle is simple, clear and convenient. The top left corner of the main page is TODO's logo and time information, and the top right corner is four learning AIDS. The study plan takes up most of the page, which helps the user to get a clearer picture of what to do next.
 ![imagename](./readme/img4.png)
