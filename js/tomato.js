@@ -1,10 +1,10 @@
 let tomatoPop = document.querySelector(".tomatoPop")
 let workTime = document.querySelector(".workTime")
 let breakTime = document.querySelector(".breakTime")
-// 关闭 番茄计时器弹框
-let breakTimeText = 5;      // 休息时间
-let studyTimeText = 25;     // 学习时间
-let processNo = 1;          // 过程次数
+// close tomato popout
+let breakTimeText = 5;      // break time
+let studyTimeText = 25;     // study time
+let processNo = 1;          // process
 function openTomato() {
     tomatoPop.style.display = 'block';
     workTime.innerHTML = studyTimeText*processNo + ' : 00'
@@ -14,14 +14,14 @@ function openTomato() {
 function closeTomato() {
     tomatoPop.style.display = 'none';
 }
-// 加时间
+// add time
 function tomatoA() {
     processNo = processNo + 1
     workTime.innerHTML = studyTimeText*processNo + ' : 00'
     breakTime.innerHTML = (breakTimeText*processNo < 10 ? '0' + breakTimeText*processNo : breakTimeText*processNo) + ' : 00'
     fqTime_num.innerHTML = 'S'+processNo
 }
-// 减时间
+// minus time
 function tomatoE() {
     if(processNo > 1){
         processNo = processNo - 1
@@ -35,16 +35,16 @@ function tomatoE() {
 let fqTime_num = document.querySelector(".fqTime_num")
 let fqTime_text = document.querySelector(".fqTime_text")
 let fqTime = document.querySelector(".fqTime")
-// 倒计时
-// 开始倒计时
-let tomatoTimeBreak;         // 储存休息倒计时 定时器
-let tomatoTimeStudy;         // 储存学习倒计时 定时器
-let tomatoSecond = 0;   // 秒
-let tomatoBreak = 5;   // 休息时间
-let tomatoStudy = 25;   // 学习时间
-let tomatoNum = 1;     // 番茄次数
+// The countdown
+// start countdown
+let tomatoTimeBreak;         // Save the break countdown timer
+let tomatoTimeStudy;         // Save study countdown timer
+let tomatoSecond = 0;   // seconds
+let tomatoBreak = 5;   // Time to break
+let tomatoStudy = 25;   // study time
+let tomatoNum = 1;     // number of tomato
 
-let tomatoState = false // 暂停开始
+let tomatoState = false // stop start
 function startTomatoTime() {
     tomatoSecond = 0
     tomatoBreak = 5
@@ -56,7 +56,7 @@ function startTomatoTime() {
     fqTime.style.display = 'flex'
     tomatoPop.style.display = 'none';
 }
-// 循环倒计时
+// Cyclic countdown
 function promiseStudy() {
     tomatoSecond = 0
     new Promise((resolve, reject) => {
@@ -111,7 +111,7 @@ function promiseBreak() {
     })
 }
 
-// 点击缩小版本 关闭
+// Click on the smaller version  close
 function tomatoCloseSm(e) {
     tomatoSecond = 0;
     tomatoNum = 1;
@@ -123,7 +123,7 @@ function tomatoCloseSm(e) {
     e = e || window.event
     e.stopPropagation()
 }
-// 点击顶部番茄计时器
+// Click the tomato timer at the top
 function tomatoTime() {
     tomatoPop.style.display = 'block';
 }
