@@ -1,26 +1,26 @@
-// 点击缩略框
+// Click thumbnail
 function clickTime() {
     timingPop.style.display = 'block';
 }
 
 let timingPop = document.querySelector(".timingPop")
-// 关闭计时弹框
+// Close stopwatch popout
 function closeTiming() {
     timingPop.style.display = 'none';
 }
-let timingTime; // 保存计时器函数变量
+let timingTime; // Save the stopwatch function variable
 
-let timingHour = 0;     // 时
-let timingMinute = 0;   // 分
-let timingSecond = 0;   // 秒
+let timingHour = 0;     // hours
+let timingMinute = 0;   // minutes
+let timingSecond = 0;   // seconds
 let timingText1 = document.querySelector(".timingText1")
 let timingText2 = document.querySelector(".timingText2")
 let timingText3 = document.querySelector(".timingText3")
 
 let jsTime = document.querySelector(".jsTime")
 let jsTime_text = document.querySelector(".jsTime_text")
-let timingStart = false;        // 计时状态
-// 开始暂停计时
+let timingStart = false;        // Timing state
+// Start stop the stopwatch
 function startTiming() {
     jsTime.style.display = 'flex'
     timingStart = !timingStart
@@ -47,7 +47,7 @@ function startTiming() {
         clearInterval(timingTime)
     }
 }
-// 重置时间
+// reset time
 function resetTiming() {
     timingHour = 0
     timingMinute = 0
@@ -58,7 +58,7 @@ function resetTiming() {
     clearInterval(timingTime)
     timingStart = false
 }
-// 点击缩略框的关闭
+// Close thumbnail 
 function clickClose(e) {
     timingPop.style.display = 'none';
     jsTime.style.display = 'none';
