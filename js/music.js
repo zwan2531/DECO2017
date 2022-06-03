@@ -22,12 +22,12 @@ let musicPop = document.querySelector(".musicPop")
 let musicList = document.querySelector(".musicList")
 let yyMusic = document.querySelector(".yyMusic")
 let musicSmName = document.querySelector(".musicSmName")
-// 关闭音乐弹框
+// close music popout
 function closeMusicPop() {
     musicPop.style.display = 'none'
     yyMusic.style.display = 'flex'
 }
-// 打开音乐弹框
+// open music popout
 function openMusicPop() {
     musicPop.style.display = 'block'
     let musicHtml = ``
@@ -41,11 +41,11 @@ function openMusicPop() {
     }
     musicList.innerHTML = musicHtml
 }
-// 切换音乐
-let musicIndex = 0;     // 音乐播放器
+// Switch the music
+let musicIndex = 0;     // Music player
 let musicS = document.querySelector(".musicS")
 let musicImgSrc = document.querySelector(".musicImgSrc")
-// 点击切换
+// Click on the switch
 function clickMusicList(index) {
     musicIndex = index
     musicImgSrc.src = musicArr[index].img
@@ -53,7 +53,7 @@ function clickMusicList(index) {
     musicS.play()
     musicSmName.innerHTML = musicArr[index].name
 }
-// 关闭缩略狂
+// Close thumbnail
 function closeSmMusic(e){
     yyMusic.style.display = 'none'
     musicS.pause()
