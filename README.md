@@ -20,6 +20,16 @@ Before editing the code for the final design, I sent the design drawings of the 
 
 <img src="./readme/img1.png" width="50%"><img src="./readme/img5.jpg" width="50%">
 
+## Design Principles
+
+In this design, I followed three principles: emphasis, harmony and proportion.
+
+First, I chose to use buttons with different shapes that contrast with the background color as switches for software functions. This helps users know more clearly and quickly where to enable these functions. At the same time, I reserved a lot of space for the task presentation area to make them more focused on the content.
+
+The second is the setting of proportions, where larger elements are more important and smaller elements are less important. The smaller elements are the TODO logo, the current time and five function buttons. The goal is both to make it easier for users to find where features are turned on and to focus on tasks.
+
+Finally, there is the proportion. In fact, every element of my design is not exactly the same, but there are also similarities. For example, the four function buttons in the upper right corner have the same color and size but different shapes, especially the two buttons of the tomato clock and stopwatch. The same is true for tasks after setting. Each task has the same size, but due to the difference in setting time, different information will be displayed in priority color, topic and due date. The goal is to create a sense of unity by keeping these elements unique on similar premises, making them seem related and harmonious.
+
 ## Self-reflection & Challenges
 
 In the process of this design, the biggest challenge I faced was how to let users understand the functions and operation methods of the software as soon as possible without any hints. I try to simplify the page as much as possible to help the user see clearly what each part does. Finding the right balance between feature-rich and easy to use can be difficult, and sometimes users get confused because there are so many features. I think my interface looks a little dull, but this may be influenced by my desire to make the user more aware of the function. I may change some details in the future, such as color, key position and font, etc
