@@ -1,14 +1,14 @@
-// 定义初始化数据
+// Define initialization data
 let taskArr = [];
 let taskObj = {
-    subject: '',            // 任务分类名字
-    name: '',               // 任务名字
-    description: '',        // 描述
-    date: '',               // 任务时间
-    time: '',               // 学习时间
-    state: '',              // 任务状态  完成  开始  已完成
-    priority: '',           // 重要等级
-    oneDateTime: '',        // 每天需要学习的时间
+    subject: '',            // Task Category name
+    name: '',               // Task name
+    description: '',        // Task description
+    date: '',               // Due date
+    time: '',               // time for study
+    state: '',              // Task status ready in progress done
+    priority: '',           // Task priority level
+    oneDateTime: '',        // Time for this task left tody
 }
 let task1 = document.querySelector(".task1")
 let task2 = document.querySelector(".task2")
@@ -94,20 +94,20 @@ let priorityIpt = document.querySelector(".priorityIpt")
 
 
 let addTaskPop = document.querySelector(".addTaskPop")
-// 添加 task
+// add task
 function addTask() {
     if(subIpt.value == '' || nameIpt.value == '' || desIpt.value == '' || dateIpt.value == '' || timeIpt.value == ''){
         return alert('Please fill in the information completely')
     }
     let obj = {
-        subject: subIpt.value,            // 任务分类名字
-        name: nameIpt.value,               // 任务名字
-        description: desIpt.value,        // 描述
-        date: dateIpt.value,               // 任务时间
-        time: timeIpt.value,               // 学习时间
-        state: statusIpt.value,              // 任务状态  完成  开始  已完成
-        priority: priorityIpt.value,           // 重要等级
-        oneDateTime: parseInt(Number(timeIpt.value)/countDays(dateIpt.value)),        // 每天需要学习的时间
+        subject: subIpt.value,            // Task Category name
+        name: nameIpt.value,               // Task name
+        description: desIpt.value,        // Task description
+        date: dateIpt.value,               // Due date
+        time: timeIpt.value,               // Time for study
+        state: statusIpt.value,              // Task status ready in progress done
+        priority: priorityIpt.value,           // priority level
+        oneDateTime: parseInt(Number(timeIpt.value)/countDays(dateIpt.value)),        // Time for study left today
     }
     if(editIndex === ''){
         taskArr.push(obj)
@@ -119,7 +119,7 @@ function addTask() {
     addTaskPop.style.display = 'none'
 }
 
-// 清空input数据
+// Clearing input data
 function cleanIpt() {
     subIpt.value = ''
     nameIpt.value = ''
@@ -129,7 +129,7 @@ function cleanIpt() {
     editIndex = ''
 }
 
-// 天数计算
+// Number of days calculation
 function countDays(time) {
     let oDate1 = new Date()
     let oDate2 = new Date(time)
@@ -140,12 +140,12 @@ function countDays(time) {
     return iDays
 }
 
-// 点击加号按钮
+// Click the plus button
 function clickAddImg() {
     addTaskPop.style.display = 'block'
 }
 let editIndex = ''
-// 编辑
+// The editor
 function clickEdit(index) {
     editIndex = index;
     console.log(editIndex);
@@ -158,7 +158,7 @@ function clickEdit(index) {
     priorityIpt.value = taskArr[index].priority;
     addTaskPop.style.display = 'block'
 }
-// 点击删除
+// Click the delete
 function clickDelTask() {
     if(editIndex === ''){
         alert('Add operation cannot be deleted')
@@ -170,7 +170,7 @@ function clickDelTask() {
         }
     }
 }
-// 关闭task 弹框
+// close task popout
 function closeTask() {
     addTaskPop.style.display = 'none'
     cleanIpt()
