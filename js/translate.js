@@ -16,7 +16,7 @@ let meaningsCon = document.querySelector(".meaningsCon")
 let definitions = document.querySelector(".definitions")
 let pronA = document.querySelector(".pronA")
 
-// 查询链接
+// The link
 function searchIpt() {
     if(tran_search_ipt.value == ''){
         return alert('Please enter a word')
