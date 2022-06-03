@@ -138,7 +138,7 @@ img{
     align-items: center;
     font-weight: 600;
 }
-/*添加任务弹框 start*/
+/*add task popout start*/
 .addTaskPop{
     position: fixed;
     left: 50%;
@@ -250,11 +250,11 @@ img{
 .sm_close>img{
     width: 20px !important;
 }
-/*添加任务弹框 end*/
+/*add task popout end*/
 
 
 
-/*计时弹框 start*/
+/*stopwatch popout start*/
 .timingPop{
     position: fixed;
     left: 50%;
@@ -297,9 +297,9 @@ img{
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
 }
-/*计时弹框 end*/
+/*Stopwatch popout end*/
 
-/*番茄弹框 start*/
+/*tomato popout start*/
 .tomatoPop{
     position: fixed;
     left: 50%;
@@ -377,9 +377,9 @@ img{
 .fqTime_text{
     margin-left: 10px;
 }
-/*番茄弹框 end*/
+/*tomato popout end*/
 
-/*翻译弹框 start*/
+/*dictionary popout start*/
 .translatePop{
     position: fixed;
     left: 50%;
@@ -453,9 +453,9 @@ img{
     width: 100%;
     padding: 10px 0;
 }
-/*翻译弹框 end*/
+/*dictionary popout end*/
 
-/*音乐弹框 start*/
+/*music popout start*/
 .musicPop{
     position: fixed;
     left: 50%;
@@ -512,7 +512,7 @@ img{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-/*音乐弹框 end*/
+/*music popout end*/
 @media screen and (max-width: 960px){
     html{
         font-size: 10px;
